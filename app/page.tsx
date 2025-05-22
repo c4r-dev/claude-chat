@@ -34,6 +34,7 @@ export default function Home() {
         setConversation(prev => [...prev, { role: 'assistant', content: data.response }]);
       }
     } catch (error) {
+      console.error('Failed to send message:', error);
       setConversation(prev => [...prev, { role: 'assistant', content: 'Error: Failed to send message' }]);
     } finally {
       setIsLoading(false);
